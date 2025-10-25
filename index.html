@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#0d6efd" />
+  <title>NB全能助手 在线安装</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f7f8fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .container {
+      width: 90%;
+      max-width: 480px;
+      margin-top: 50px;
+      background: #fff;
+      padding: 28px 24px;
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 24px;
+      margin: 0 auto 16px;
+      background: #eaeaea;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 42px;
+      color: #999;
+    }
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+      color: #333;
+    }
+    .version {
+      color: #777;
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+    }
+    .btn {
+      display: inline-block;
+      background: #0d6efd;
+      color: white;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0b5ed7;
+    }
+    .footer {
+      margin-top: 32px;
+      font-size: 0.8rem;
+      color: #aaa;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon" id="appIcon">📱</div>
+    <h1 id="appName">NB全能助手</h1>
+    <div class="version" id="appVersion">版本 3.6.2</div>
+    <a id="installBtn" class="btn" href="#">立即安装</a>
+  </div>
+
+  <script>
+    const appConfig = {
+      name: "NB全能助手",
+      version: "3.6.2",
+      ipa: "NBPro_v3.6.2.ipa"
+    };
+
+    // 自动生成 plist 安装链接
+    const installBtn = document.getElementById("installBtn");
+    installBtn.href = `itms-services://?action=download-manifest&url=https://nbzhushou.chmg9999.deno.net/manifest.plist`;
+    
+    // 设置显示信息
+    document.getElementById("appName").textContent = appConfig.name;
+    document.getElementById("appVersion").textContent = `版本 ${appConfig.version}`;
+  </script>
+</body>
+</html>
